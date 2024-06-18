@@ -1,0 +1,16 @@
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= link_to @document.file.filename.to_s, rails_blob_path(@document.file, disposition: "attachment") %>
+</p>
+
+<% if @ocr_text.present? %>
+  <p>
+    <strong>OCR Text:</strong>
+    <pre><%= @ocr_text %></pre>
+  </p>
+<% end %>
