@@ -13,6 +13,7 @@ This is a Ruby on Rails application that demonstrates how to implement file uplo
 - Ruby 3.0.0 or later
 - Rails 6.0 or later
 - Tesseract OCR
+- Tesseract language pack (optional, for additional languages)
 
 ## Getting Started
 
@@ -30,17 +31,19 @@ Ensure you have the following installed:
 
 ```sh
 brew install tesseract
+brew install tesseract-lang
 ```
 
 **Ubuntu:**
 
 ```sh
 sudo apt-get install tesseract-ocr
+sudo apt-get install tesseract-ocr-<lang-code>
 ```
 
 **Windows:**
 
-Download the installer from the [Tesseract at UB Mannheim page](https://github.com/UB-Mannheim/tesseract/wiki) and follow the installation instructions.
+Download the installer from the [Tesseract at UB Mannheim page](https://github.com/UB-Mannheim/tesseract/wiki) and follow the installation instructions. For additional languages, download the appropriate language pack files.
 
 ### Installation
 
@@ -69,7 +72,7 @@ rails db:migrate
 1. Start the Rails server:
 
 ```sh
-rails server
+./bin/dev
 ```
 
 2. Navigate to `http://localhost:3000` in your web browser.
