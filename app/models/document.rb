@@ -6,7 +6,7 @@ class Document < ApplicationRecord
         return unless file.attached?
     
         file_path = ActiveStorage::Blob.service.send(:path_for, file.key)
-        image = RTesseract.new(file_path)
+        image = RTesseract.new(file_path, lang: 'por')
         image.to_s
     end
 
